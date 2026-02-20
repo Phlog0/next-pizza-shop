@@ -1,7 +1,21 @@
 export const deliveryPrice = 210;
 export function calcTotalAmountWithPercentages(totalAmount: number) {
-  const taxesPrice = ((totalAmount / 100) * 5).toFixed(2);
+  if (
+    typeof totalAmount !== "number" ||
+    isNaN(totalAmount) ||
+    !isFinite(totalAmount)
+  ) {
+    throw new Error("totalAmount must be a valid number");
+  }
+  if (totalAmount < 0) {
+    throw new Error("totalAmount cannot be negative");
+  }
+  const roundedAmount = Math.round(totalAmount * 100) / 100;
+  const taxesPrice = ((roundedAmount / 100) * 5).toFixed(2);
   const totalAmountWithPercentages =
     totalAmount + Number(taxesPrice) + deliveryPrice;
-  return { taxesPrice, totalAmountWithPercentages };
+  return {
+    taxesPrice,
+    totalAmountWithPercentages: totalAmountWithPercentages.toFixed(2),
+  };
 }

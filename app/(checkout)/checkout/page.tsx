@@ -57,9 +57,10 @@ export default function CheckoutPage() {
       setSubmitting(true);
       const url = await createOrder({
         ...data,
-        totalAmount:
+        totalAmount: Number(
           calcTotalAmountWithPercentages(totalAmount)
             .totalAmountWithPercentages,
+        ),
       });
       toast.success("Заказ успешно оформлен. Переход на оплату...", {
         style: {
@@ -72,7 +73,7 @@ export default function CheckoutPage() {
       if (url) {
         location.href = url;
       }
-    } catch  {
+    } catch {
       setSubmitting(false);
 
       toast.error("Не удалось создать заказ!", {
@@ -99,7 +100,7 @@ export default function CheckoutPage() {
               "flex flex-col lg:flex-row justify-between gap-5 w-full transition-opacity",
               {
                 "pointer-events-none opacity-50": loading,
-              }
+              },
             )}
             disabled={loading}
           >

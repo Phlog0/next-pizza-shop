@@ -1,6 +1,6 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
+import React from "react";
 import { Metadata } from "next";
 import { Providers } from "@/shared/components/shared";
 

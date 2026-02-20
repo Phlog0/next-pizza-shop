@@ -35,7 +35,7 @@ export async function createPayment(details: CreatePaymentDetails) {
           "Content-Type": "application/json",
           "Idempotence-Key": crypto.randomUUID(),
         },
-      }
+      },
     );
 
     return data;
@@ -49,12 +49,12 @@ export async function createPayment(details: CreatePaymentDetails) {
       // Специфичные ошибки YooKassa
       if (error.response?.status === 401) {
         throw new Error(
-          "Ошибка аутентификации YooKassa. Проверьте shopId и secretKey"
+          "Ошибка аутентификации YooKassa. Проверьте shopId и secretKey",
         );
       }
 
       throw new Error(
-        `YooKassa API error: ${JSON.stringify(error.response?.data)}`
+        `YooKassa API error: ${JSON.stringify(error.response?.data)}`,
       );
     }
 

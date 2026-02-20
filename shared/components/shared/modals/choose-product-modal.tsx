@@ -33,7 +33,7 @@ export function ChooseProductModal({
       <DialogContent
         className={cn(
           "max-h-[98%] overflow-auto bg-gray-100 sm:max-w-fit scrollbar max-w-[90vw]",
-          className
+          className,
         )}
       >
         <DialogHeader>

@@ -28,7 +28,7 @@ export function ProductsGroupList({
     intersectionRef as RefObject<HTMLElement>,
     {
       threshold: 0.4,
-    }
+    },
   );
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export function ProductsGroupList({
       <Title text={title} size="lg" />
       <div
         className={cn(
-          "grid grid-rows-1 gap-17.5 grid-col-1 md:grid-cols-2 lg:grid-cols-3"
+          "grid grid-rows-1 gap-17.5 grid-col-1 md:grid-cols-2 lg:grid-cols-3",
         )}
       >
         {items?.map((product) => (

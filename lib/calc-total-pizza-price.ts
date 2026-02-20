@@ -29,11 +29,11 @@ export const calcTotalPizzaPrice = (
   type: PizzaType,
   size: PizzaSize,
   ingredients: Ingredient[],
-  selectedIngredients: Set<number>
+  selectedIngredients: Set<number>,
 ) => {
   const pizzaPrice =
     variants.find(
-      (item) => item.productType === type && item.productSize === size
+      (item) => item.productType === type && item.productSize === size,
     )?.price || "Нет такой вариации";
 
   const ingredientPrice = ingredients

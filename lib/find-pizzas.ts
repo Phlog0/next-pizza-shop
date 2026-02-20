@@ -14,7 +14,11 @@ export type GetSearchParams = Partial<{
 const DEFAULT_PRICE_FROM = 0;
 const DEFAULT_PRICE_TO = 1000;
 
-export const findPizzas = async (params: GetSearchParams) => {
+export const findPizzas = async (params?: GetSearchParams) => {
+  console.log({ params });
+  if (!params) {
+    return;
+  }
   const sizes = params.selectedSizesValues?.split(",").map(Number);
   const pizzaTypes = params.selectedPizzaTypesValues?.split(",").map(Number);
   const ingredientsIds = params.selectedIngredientsValues

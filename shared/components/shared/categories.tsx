@@ -23,7 +23,7 @@ export function Categories({
           <a
             className={cn(
               "flex items-center justify-center font-bold px-10 h-10 rounded-[8px] cursor-pointer w-full",
-              categoryActiveId === category.id && "text-primary bg-orange-200"
+              categoryActiveId === category.id && "text-primary bg-orange-200",
             )}
             href={`/#${category.title}`}
           >

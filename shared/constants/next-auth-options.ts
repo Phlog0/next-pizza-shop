@@ -1,4 +1,4 @@
-import { AuthOptions } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import VkProvider from "next-auth/providers/vk";
@@ -6,7 +6,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { prisma } from "@/prisma/prisma";
 import { compare, hashSync } from "bcrypt";
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthOptions = {
   // ! Проблема: я зашел с гитхаба, потом поменял в акке почту. Тепреь с почты я могу зайти, а с гитхаба вылетает ошибка
   providers: [
     GitHubProvider({
@@ -78,7 +78,7 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
-  secret: process.env.NEXTAUTH_JWT_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
   },
