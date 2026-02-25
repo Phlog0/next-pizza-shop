@@ -5,7 +5,7 @@ import {
   InferedFormRegisterSchema,
 } from "../modals/auth-modal/forms/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { User } from "@prisma/client";
+import { User } from "@/generated/prisma/client";
 import { toast } from "sonner";
 import { signOut } from "next-auth/react";
 import { Container } from "../container";

@@ -1,4 +1,4 @@
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 
 export async function findOrCreateCart(token: string) {
   let userCart = await prisma.cart.findFirst({

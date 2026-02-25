@@ -7,7 +7,7 @@ import {
   FiltersAccordion,
 } from "@/shared/components/shared";
 import { ProductsGroupList } from "@/shared/components/shared";
-// import { categories } from "@/prisma/constats";
+
 import { Suspense } from "react";
 import { findPizzas, GetSearchParams } from "@/lib";
 

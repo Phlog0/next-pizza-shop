@@ -1,4 +1,4 @@
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 import { findOrCreateCart, patchTotalAmount } from "@/lib";
@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
         cart: null,
         message: "Не удалось получить корзину",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -113,7 +113,7 @@ export async function POST(req: NextRequest) {
     console.error("[CART_POST server error", error);
     return NextResponse.json(
       { message: "Не удалось добавить товар(ы) в корзину" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

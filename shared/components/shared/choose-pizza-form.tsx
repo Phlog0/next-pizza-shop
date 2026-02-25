@@ -5,10 +5,12 @@ import { Title } from "./title";
 import { Button } from "../ui";
 import { GroupVariants } from "./group-variants";
 import { PizzaSize, PizzaType, pizzaTypes } from "@/shared/constants";
-import { Ingredient } from "@prisma/client";
+import { Ingredient } from "@/generated/prisma/client";
 import { IngredientProfile } from "./ingredient-profile";
-import { ProductWithVariants } from "@/@types";
-import { calcTotalPizzaPrice } from "@/lib";
+import type { ProductWithVariants } from "@/@types";
+// ! Теперь в там есть функция с сервреной логиокй. При импорте "@/lib/index.ts" она тянет сервеную лоигку (pg-adapter) Тоже самое в cart-draver
+import { calcTotalPizzaPrice } from "@/lib/calc-total-pizza-price";
+// import { calcTotalPizzaPrice } from "@/lib";
 import { usePizzaOptions } from "@/shared/hooks";
 import { useCartStore } from "@/shared/store";
 import { toast } from "sonner";

@@ -14,7 +14,9 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { PropsWithChildren, useEffect } from "react";
 import { CartDraverItem } from "./cart-draver-item";
-import { getCartItemsDetails } from "@/lib";
+// ! Теперь в там есть функция с сервреной логиокй. При импорте "@/lib/index.ts" она тянет сервеную лоигку (pg-adapter)
+// import { getCartItemsDetails } from "@/lib";
+import { getCartItemsDetails } from "@/lib/get-cart-items-details";
 import { useCartStore } from "@/shared/store";
 import { PizzaSize, PizzaType } from "@/shared/constants";
 import Image from "next/image";

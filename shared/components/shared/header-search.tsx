@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useClickAway, useDebounce } from "react-use";
 import { Api } from "@/shared/services/api-client";
-import { Product } from "@prisma/client";
+import { Product } from "@/generated/prisma/client";
 export function HeaderSearch({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [focused, setFocused] = useState(false);
@@ -32,7 +32,7 @@ export function HeaderSearch({ className }: { className?: string }) {
       }
     },
     250,
-    [searchQuery]
+    [searchQuery],
   );
 
   const onClickItem = () => {
@@ -50,7 +50,7 @@ export function HeaderSearch({ className }: { className?: string }) {
         ref={ref}
         className={cn(
           "flex flex-col flex-1 items-center z-20 bg-white rounded-xl relative",
-          className
+          className,
         )}
       >
         <Search className="absolute left-1 text-gray-400" />
@@ -71,7 +71,7 @@ export function HeaderSearch({ className }: { className?: string }) {
           <div
             className={cn(
               "absolute bg-white rounded-xl shadow-md py-4 top-10 transition-all duration-200 invisible opacity-0 z-30 max-h-[75vh] overflow-y-scroll scrollbar",
-              focused && "visible opacity-100"
+              focused && "visible opacity-100",
             )}
           >
             {products.map((item) => (

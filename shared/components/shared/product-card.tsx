@@ -4,7 +4,7 @@ import React from "react";
 import { Title } from "./title";
 import { Button } from "../ui";
 import { Plus } from "lucide-react";
-import { Ingredient } from "@prisma/client";
+import { Ingredient } from "@/generated/prisma/client";
 
 type ProductCardProps = {
   id: number;

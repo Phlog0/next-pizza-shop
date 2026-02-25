@@ -3,7 +3,7 @@ import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import VkProvider from "next-auth/providers/vk";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 import { compare, hashSync } from "bcrypt";
 
 export const authOptions: NextAuthOptions = {
@@ -26,7 +26,6 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID || "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
       profile(profile) {
-        console.log("Google profile:", profile); // ← вот так
         return {
           id: profile.sub,
           name: profile.name,

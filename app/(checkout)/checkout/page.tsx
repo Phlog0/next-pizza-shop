@@ -15,7 +15,7 @@ import { useCartStore } from "@/shared/store";
 import { cn } from "@/lib/utils";
 import { createOrder } from "@/app/actions";
 import { useEffect, useState } from "react";
-import { calcTotalAmountWithPercentages } from "@/lib";
+import { calcTotalAmountWithPercentages } from "@/lib/calc-total-amount-with-percentages";
 import { useSession } from "next-auth/react";
 import { Api } from "@/shared/services";
 import { redirect } from "next/navigation";

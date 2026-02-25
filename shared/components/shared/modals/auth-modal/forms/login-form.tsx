@@ -25,7 +25,6 @@ export function LoginForm({ onClose }: LoginFormProps) {
         ...data,
         redirect: false,
       });
-      console.log({ response });
       if (!response?.ok) {
         throw new Error("Ошибка авторизации");
       }

@@ -1,4 +1,4 @@
-import { Story, StoryItem } from "@prisma/client";
+import { Story, StoryItem } from "@/generated/prisma/client";
 import { ApiRoutes } from "./api-constants";
 import { axiosInstance } from "./axios-instance";
 

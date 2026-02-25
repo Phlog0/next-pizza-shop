@@ -1,4 +1,4 @@
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -13,7 +13,6 @@ export async function GET(req: NextRequest) {
         code,
       },
     });
-    console.log({ code, verificationCode: findVerificationCode });
     if (!findVerificationCode) {
       return NextResponse.json({ error: "Неверный код" }, { status: 400 });
     }

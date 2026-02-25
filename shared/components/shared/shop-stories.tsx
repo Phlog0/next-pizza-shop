@@ -24,7 +24,6 @@ export function ShopStories({ className }: { className?: string }) {
 
   const onClickStory = (story: IStory) => {
     setSelectedStory(story);
-    console.log(story);
     if (story.storyItems.length > 0) {
       setOpen(true);
     }
@@ -34,7 +33,7 @@ export function ShopStories({ className }: { className?: string }) {
       <Container
         className={cn(
           "flex items-center gap-2 my-10 justify-between",
-          className
+          className,
         )}
       >
         {stories.length === 0

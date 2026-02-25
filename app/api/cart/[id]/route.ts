@@ -1,5 +1,5 @@
 import { patchTotalAmount } from "@/lib";
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 type GETParams = {
   params: Promise<{
@@ -15,7 +15,7 @@ export async function PATCH(req: NextRequest, { params }: GETParams) {
     if (!token) {
       return NextResponse.json(
         { error: "Cart token is not found" },
-        { status: 403 }
+        { status: 403 },
       );
     }
     const data = (await req.json()) as { quantity: number };
@@ -35,7 +35,7 @@ export async function PATCH(req: NextRequest, { params }: GETParams) {
     console.error("[CART_PUTCH] Server error", error);
     return NextResponse.json(
       { message: "Не удалось обновить корзину" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -48,7 +48,7 @@ export async function DELETE(req: NextRequest, { params }: GETParams) {
     if (!token) {
       return NextResponse.json(
         { error: "Cart token is not found" },
-        { status: 403 }
+        { status: 403 },
       );
     }
     const cartItem = await prisma.cartItem.findFirst({
@@ -66,7 +66,7 @@ export async function DELETE(req: NextRequest, { params }: GETParams) {
     console.error("[CART_DELETE] Server error", error);
     return NextResponse.json(
       { message: "Не удалось удалить корзину" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

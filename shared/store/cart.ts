@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { Api } from "@/shared/services";
-import { getCartDetails } from "@/lib";
-import { TCartStateItem } from "@/lib/get-cart-details";
+import { getCartDetails } from "@/lib/get-cart-details";
+import type { TCartStateItem } from "@/lib/get-cart-details";
 import { CreateCartItemValues } from "../services/dto";
 
 export type CartState = {
@@ -24,7 +24,6 @@ export const useCartStore = create<CartState>()((set, get) => ({
     try {
       set({ loading: true, error: false });
       const data = await Api.cart.getCart();
-      console.log({ data });
       if (data) {
         set(getCartDetails(data));
       }

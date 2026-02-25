@@ -16,6 +16,7 @@ export default defineConfig([
       "out/**",
       "*.config.js",
       "next-env.d.ts",
+      "prisma",
     ],
   },
 

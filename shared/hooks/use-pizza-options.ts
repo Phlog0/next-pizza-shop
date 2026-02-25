@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { PizzaSize, PizzaType } from "../constants";
 
-import { getAvailablePizzaSizes } from "@/lib";
+import { getAvailablePizzaSizes } from "@/lib/get-available-pizza-sizes";
 import { useSet } from "react-use";
-import { ProductWithVariants } from "@/@types";
+import type { ProductWithVariants } from "@/@types";
 // type UsePizzaOptionsReturnType = {
 //   size: PizzaSize;
 //   setSize: (pizzaSize: PizzaSize) => void;

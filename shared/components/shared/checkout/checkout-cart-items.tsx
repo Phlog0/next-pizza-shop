@@ -2,7 +2,7 @@
 import { useCartStore } from "@/shared/store";
 import { useEffect } from "react";
 import { CartDraverItem } from "../cart-draver-item";
-import { getCartItemsDetails } from "@/lib";
+import { getCartItemsDetails } from "@/lib/get-cart-items-details";
 import { PizzaSize, PizzaType } from "@/shared/constants";
 import { cn } from "@/lib/utils";
 import { CartItemSkeleton } from "./cart-item-skeleton";
@@ -23,7 +23,7 @@ export function CheckoutCartItems({ className }: { className?: string }) {
     <div
       className={cn(
         "overflow-auto scrollbar flex flex-col gap-4 flex-1",
-        className
+        className,
       )}
     >
       {cartItems.length ? (
@@ -41,7 +41,7 @@ export function CheckoutCartItems({ className }: { className?: string }) {
                 ? getCartItemsDetails(
                     item.productType as PizzaType,
                     item.productSize as PizzaSize,
-                    item.ingredients
+                    item.ingredients,
                   )
                 : ""
             }

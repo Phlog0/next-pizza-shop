@@ -4,7 +4,7 @@ import {
   Container,
 } from "@/shared/components/shared";
 
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 
 export default async function ProductPage({

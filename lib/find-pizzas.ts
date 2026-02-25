@@ -1,4 +1,4 @@
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 
 //priceFrom=90&priceTo=850&selectedPizzaTypesValues=2&selectedIngredientsValues=6&selectedSizesValues=40
 export type GetSearchParams = Partial<{
@@ -15,7 +15,6 @@ const DEFAULT_PRICE_FROM = 0;
 const DEFAULT_PRICE_TO = 1000;
 
 export const findPizzas = async (params?: GetSearchParams) => {
-  console.log({ params });
   if (!params) {
     return;
   }

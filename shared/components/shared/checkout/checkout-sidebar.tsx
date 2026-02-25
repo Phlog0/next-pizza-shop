@@ -4,7 +4,11 @@ import { ArrowRight, Package, Percent, Truck } from "lucide-react";
 import { WhiteBlock } from "../white-block";
 import { CheckoutDetailsItem } from "./checkout-details-item";
 import { Button, Skeleton } from "../../ui";
-import { calcTotalAmountWithPercentages, deliveryPrice } from "@/lib";
+import {
+  calcTotalAmountWithPercentages,
+  deliveryPrice,
+} from "@/lib/calc-total-amount-with-percentages";
+
 export function CheckoutSidebar({ submitting }: { submitting: boolean }) {
   const totalAmount = useCartStore((state) => state.totalAmount);
   const loading = useCartStore((state) => state.loading);

@@ -6,9 +6,9 @@ import {
   storyItems,
   users,
 } from "./constants";
-import { prisma } from "./prisma";
+import { prisma } from "@/lib/prisma";
 import { hashSync } from "bcrypt";
-import { type Prisma } from "@prisma/client";
+import { type Prisma } from "@/generated/prisma/client";
 const randomDemicalNumber = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };

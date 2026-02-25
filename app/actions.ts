@@ -1,7 +1,7 @@
 "use server";
 
 import { sendEmail } from "@/lib/email";
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 import { InferedCheckoutFormSchema } from "@/shared/components/shared/checkout";
 import { COOKIES_KEYS } from "@/shared/constants";
 import { cookies } from "next/headers";
@@ -10,9 +10,10 @@ import {
   VerificationUserTemplate,
 } from "@/shared/components/shared/email-templates";
 import { createPayment } from "@/lib";
-import { Prisma } from "@prisma/client";
+
 import { getUserSession } from "@/lib/get-user-session";
 import { hashSync } from "bcrypt";
+import { Prisma } from "@/generated/prisma/client";
 export async function createOrder(
   values: InferedCheckoutFormSchema & { totalAmount: number },
 ) {

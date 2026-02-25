@@ -5,7 +5,7 @@ import {
   PizzaSize,
   PizzaType,
 } from "@/shared/constants";
-import { Ingredient } from "@prisma/client";
+import { Ingredient } from "@/generated/prisma/client";
 
 /**
  * хи-хи-хи! Функция для подсчёта стоимости товара (+ текст для пиццы)

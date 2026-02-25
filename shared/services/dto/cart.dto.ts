@@ -4,7 +4,7 @@ import {
   Ingredient,
   Product,
   ProductVariant,
-} from "@prisma/client";
+} from "@/generated/prisma/client";
 export type CartItemDto = CartItem & {
   productVariant: ProductVariant & {
     product: Product;
@@ -13,6 +13,7 @@ export type CartItemDto = CartItem & {
 };
 export interface CartDto extends Cart {
   items: CartItemDto[];
+  totalAmount: number;
 }
 
 export type CreateCartItemValues = {

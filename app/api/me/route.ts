@@ -1,5 +1,5 @@
 // import { getUserSession } from "@/lib/get-user-session";
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 import { authOptions } from "@/shared/constants/next-auth-options";
 import { getServerSession } from "next-auth";
 // import { authOptions } from "@/shared/constants/next-auth-options";

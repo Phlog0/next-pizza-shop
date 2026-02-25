@@ -1,6 +1,6 @@
 import { CallbackPaymnetData } from "@/@types";
 import { sendEmail } from "@/lib/email";
-import { prisma } from "@/prisma/prisma";
+import { prisma } from "@/lib/prisma";
 import { SuccessOrderTemplate } from "@/shared/components/shared/email-templates";
 import { CartItemDto } from "@/shared/services/dto";
 import { NextRequest, NextResponse } from "next/server";
