@@ -10,6 +10,8 @@ progress.md
 !.yarn/releases
 !.yarn/versions
 
+*.ps1
+*.drawio
 # testing
 /coverage
 
@@ -46,3 +48,4 @@ next-env.d.ts
 /lib/generated/prisma
 
 /generated/prisma
+.drawio

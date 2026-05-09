@@ -6,9 +6,13 @@
 
 ## 📸 Скриншоты
 
-| Главная страница                                                                         | Страница оплаты                                                                         |
-| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| ![Главная страница](https://phlog0-portfolio.ru/screenshots/pizza-shop/pizza-shop-1.png) | ![Страница оплаты](https://phlog0-portfolio.ru/screenshots/pizza-shop/pizza-shop-2.png) |
+![Главная страница](docs/screenshots/next-pizza-1.png)
+
+![Поиск товаров](docs/screenshots/next-pizza-2.jpg)
+
+![Варианты товаров](docs/screenshots/next-pizza-3.jpg)
+
+![Страница оплаты](docs/screenshots/next-pizza-4.png)
 
 ## ✨ Возможности
 

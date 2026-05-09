@@ -39,7 +39,7 @@ export function ShopStories({ className }: { className?: string }) {
         {stories.length === 0
           ? [...new Array(6)].map((item, index) => (
               <Skeleton
-                className="w-[175px] h-[220px]  rounded-md animate-pulse"
+                className="w-43.75 h-55 rounded-md animate-pulse"
                 key={index}
               />
             ))
